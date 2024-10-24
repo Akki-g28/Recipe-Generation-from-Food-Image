@@ -15,7 +15,7 @@ def about():
 @app.route('/',methods=['POST','GET'])
 def predict():
     imagefile=request.files['imagefile']
-    image_path=os.path.join(app.root_path,'static\\images\\demo_imgs',imagefile.filename)
+    image_path=os.path.join(app.root_path,'static/images/demo_imgs',imagefile.filename)
     imagefile.save(image_path)
     img="/images/demo_imgs/"+imagefile.filename
     title,ingredients,recipe = output(image_path)
